@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname,"keeper-app-frontend/build")))
 
 mongoose.connect(
   "mongodb+srv://admin-pranay:adminpranay123@cluster0.aew4g.mongodb.net/keeperApp",
@@ -39,7 +40,7 @@ const KeeperApp = mongoose.model("note", keeperAppSchema);
 let cookieUserData = "";
 
 app.get("/", (req, res) => {
-  res.sendFile(app.use(express.static("keeper-app-frontend/build/index.html")));
+  res.sendFile("/index.html");
 });
 
 app.post("/cookie-data", (req, res) => {
