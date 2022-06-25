@@ -9,7 +9,7 @@ import { setCookie } from "react-use-cookie";
 import { v4 as uuidv4 } from "uuid";
 
 function userCookieDetails() {
-  var port = process.env.PORT || 5000;
+  var port = 5000;
   const uuid = uuidv4();
   let cookieUserData = getCookie("userData");
   if (cookieUserData) {
@@ -34,11 +34,11 @@ function userCookieDetails() {
 }
 
 function App() {
-  var port = process.env.PORT || 5000;
+  var port = 5000;
   userCookieDetails();
   const [notes, setNotes] = useState([]);
   useEffect(() => {
-    var port = process.env.PORT || 5000;
+    var port = 5000;
     axios.get("http://localhost:" + port + "/home").then((response) => {
       console.log("use Efect");
       setNotes(response.data);

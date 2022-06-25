@@ -30,7 +30,7 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    var port = process.env.PORT || 5000;
+    var port = 5000;
     userCookieDetails();
     if (note.title === "" && note.content === "") {
     } else {
