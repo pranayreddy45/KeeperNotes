@@ -38,7 +38,7 @@ function App() {
   userCookieDetails();
   const [notes, setNotes] = useState([]);
   useEffect(() => {
-    var port = 4000;
+    var port = process.env.PORT || 4000;
     axios.get("http://localhost:" + port + "/home").then((response) => {
       console.log("use Efect");
       setNotes(response.data);
