@@ -25,7 +25,7 @@ function userCookieDetails() {
 
   try {
     console.log("axios post ");
-    axios.post("http://localhost:5000/cookie-data", {
+    axios.post("https://pranayreddy-keepernotes.herokuapp.com/cookie-data", {
       cookieUserData,
     });
   } catch (error) {
@@ -39,7 +39,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
     var port = 5000;
-    axios.get("http://localhost:5000/home").then((response) => {
+    axios.get("https://pranayreddy-keepernotes.herokuapp.com/home").then((response) => {
       console.log("use Efect");
       setNotes(response.data);
     });
@@ -55,7 +55,7 @@ function App() {
     userCookieDetails();
     console.log(id);
     try {
-      axios.post("http://localhost:5000/delete", {
+      axios.post("https://pranayreddy-keepernotes.herokuapp.com/delete", {
         id,
       });
     } catch (error) {

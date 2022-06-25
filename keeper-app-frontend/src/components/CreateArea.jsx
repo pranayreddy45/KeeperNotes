@@ -36,7 +36,7 @@ function CreateArea(props) {
     } else {
       try {
         console.log("Submit Note: " + note.id);
-        axios.post("http://localhost:5000/post_name", {
+        axios.post("https://pranayreddy-keepernotes.herokuapp.com/post_name", {
           note,
         });
       } catch (error) {
