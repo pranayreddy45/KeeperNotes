@@ -25,7 +25,7 @@ function userCookieDetails() {
 
   try {
     console.log("axios post ");
-    axios.post("http://localhost:" + port + "/cookie-data", {
+    axios.post("http://localhost:5000/cookie-data", {
       cookieUserData,
     });
   } catch (error) {
@@ -39,7 +39,7 @@ function App() {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
     var port = 5000;
-    axios.get("http://localhost:" + port + "/home").then((response) => {
+    axios.get("http://localhost:5000/home").then((response) => {
       console.log("use Efect");
       setNotes(response.data);
     });
@@ -55,7 +55,7 @@ function App() {
     userCookieDetails();
     console.log(id);
     try {
-      axios.post("http://localhost:" + port + "/delete", {
+      axios.post("http://localhost:5000/delete", {
         id,
       });
     } catch (error) {
