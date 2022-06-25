@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,"keeper-app-frontend/build")))
 
 mongoose.connect(
   "mongodb+srv://admin-pranay:adminpranay123@cluster0.aew4g.mongodb.net/keeperApp",
