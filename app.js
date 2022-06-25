@@ -38,6 +38,10 @@ const KeeperApp = mongoose.model("note", keeperAppSchema);
 
 let cookieUserData = "";
 
+app.get("/", (req, res) => {
+  res.sendFile(app.use(express.static("keeper-app-frontend/build/index.html")));
+});
+
 app.post("/cookie-data", (req, res) => {
   // console.log(req.body);
   cookieUserData = req.body.cookieUserData;
@@ -95,7 +99,7 @@ app.post("/delete", (req, res) => {
 var port = process.env.PORT || 4000;
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static('keeper-app-frontend/build'))
+  app.use(express.static("keeper-app-frontend/build"));
 }
 
 app.listen(port, () => {
