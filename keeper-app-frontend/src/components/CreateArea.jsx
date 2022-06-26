@@ -35,7 +35,7 @@ function CreateArea(props) {
     if (note.title === "" && note.content === "") {
     } else {
       try {
-        console.log("Submit Note: " + note.id);
+        //console.log("Submit Note: " + note.id);
         axios.post("https://pranayreddy-keepernotes.herokuapp.com/post_name", {
           note,
         });
