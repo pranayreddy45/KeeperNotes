@@ -16,10 +16,8 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.static("keeper-app-frontend/build"));
 
-//"mongodb+srv://admin-pranay:adminpranay123@cluster0.aew4g.mongodb.net/keeperApp"
-
 mongoose.connect(
-  `mongodb+srv://admin-pranay:${MONGODB_PASSWORD}@cluster0.aew4g.mongodb.net/keeperApp`,
+  `mongodb+srv://admin-pranay:${process.env.MONGODB_PASSWORD}@cluster0.aew4g.mongodb.net/keeperApp`,
   {
     useNewUrlParser: true,
   }
